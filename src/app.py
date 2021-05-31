@@ -1,15 +1,13 @@
 #Modulos necesarios
-from database import *
+
+from database import database
 from flask import Flask, redirect, url_for, request, jsonify, render_template
 
 #Inicialización de servidor y database
 app = Flask(__name__)
-database = DataBase()
+db = database.DataBase()
 
-users = [{"nombre":"pepe", "numero":"9"}, {"nombre":"jose", "numero":"10"}]
-
-
-
+#Rutas
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "GET":
@@ -21,9 +19,19 @@ def index():
 
 def get_users():
     if request.method == "GET":
-        print("Hola mundo desde python")
-        usuarios = database.get_users()
-        return redirect(url_for('.index'))      
+        #Si no viene nada en el id quiere decir que solo quiere obtener usuarios, sino quiere eliminar
+        if request.args.get('id') == None:
+            users = db.get_users()
+            return render_template('users.html', users = users)
+        elif request.args.get('id') != None:
+            #Si el metodo es delete, se elimina por id, sino puedo hacer alguna otra cosa
+            if request.args.get('method') == "delete":
+                id = request.args.get('id')
+                print(request.args.get('method'))
+                print("pasamos method")
+                db.delete_user(id)
+                return redirect('/users')
+            
 
 @app.route('/users/add', methods=["GET", "POST"])
 def show_forms():
@@ -34,17 +42,9 @@ def show_forms():
         print(request.form)
         print(request.form["name"])
         req = request.form
-        database.add_user(req["name"], req["surname"], req["email"],req["phone"])
-        user = {
-            "nombre" : req["name"],
-            "apellido" : req["surname"],
-            "email" : req["email"],
-            "teléfono" : req["phone"]
-        }
-        return user
-@app.route('/test')
-def test():
-    return "Hola como tas"
+        db.add_user(req["name"], req["surname"], req["email"],req["phone"])
+        return render_template('success.html', user = req["name"])
+
 
 
 

@@ -1,0 +1,18 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1>Estos son todos los usuarios</h1>
+
+{% if users %}
+    <h1>Hay usuarios</h1>
+{% endif %}
+
+<div class="usersContainer">
+{% for user in users -%}
+    <li class="user" id="user{{user[0]}}">{{user[1]}}<a href="?id={{user[0]}}&method=delete">Eliminar</a></li>
+{% endfor %}
+</div>
+
+
+{%endblock%}

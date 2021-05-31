@@ -1,3 +1,8 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .main {
     display: flex;
     flex-direction: column;
@@ -37,4 +42,24 @@
 
 #addUserForm input {
     margin:.5rem 0;
+}
+
+/* Users */
+
+.user {
+    list-style: none;
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+
+/* Success */
+
+.success {
+    color:#333;
+
+}
+
+.success span {
+    color:green;
 }
