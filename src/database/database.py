@@ -127,6 +127,19 @@ class DataBase:
                 self.connection.commit()
         except Exception:
             raise
+    #Productos
+    def get_products(self):
+        try:
+            sql = "SELECT * FROM repuesto"
+            self.cursor.execute(sql)
+            products = self.cursor.fetchall()
+            return products
+
+            
+
+
+        except Exception:
+            raise
 
 
 

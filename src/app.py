@@ -3,11 +3,13 @@
 from database import database
 from flask import Flask, redirect, url_for, request, jsonify, render_template
 
+
 #Inicialización de servidor y database
 app = Flask(__name__)
 db = database.DataBase()
 
 #Rutas
+
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "GET":
@@ -45,6 +47,11 @@ def show_forms():
         db.add_user(req["name"], req["surname"], req["email"],req["phone"])
         return render_template('success.html', user = req["name"])
 
+@app.route('/products', methods=["GET", "POST"])
+def products():
+    if request.method == "GET":
+        products = db.get_products()
+        return render_template('products.html', products = products)
 
 
 

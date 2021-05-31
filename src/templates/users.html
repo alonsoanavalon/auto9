@@ -4,14 +4,23 @@
 
 <h1>Estos son todos los usuarios</h1>
 
+<button id="backToIndex">Ir atrás</s></button>
+
 {% if users %}
-    <h1>Hay usuarios</h1>
+    <h1>Tabla de usuarios</h1>
 {% endif %}
 
 <div class="usersContainer">
+    <table id="usersTable">
 {% for user in users -%}
-    <li class="user" id="user{{user[0]}}">{{user[1]}}<a href="?id={{user[0]}}&method=delete">Eliminar</a></li>
+    <tr class="user" id="user{{user[0]}}">
+        <td>{{user[1]}}</td>
+        <td><a href="?id={{user[0]}}&method=delete">Eliminar</a></td>
+
+    </tr>
 {% endfor %}
+    </table>
+<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
 </div>
 
 

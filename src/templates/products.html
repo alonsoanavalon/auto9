@@ -1,0 +1,10 @@
+{%extends "layout.html"%}
+
+{% block content %}
+
+{%for product in products -%}
+    <li class="product-{{product[0]}}">{{product[1]}}</li>
+{%endfor%}
+
+
+{% endblock %}
