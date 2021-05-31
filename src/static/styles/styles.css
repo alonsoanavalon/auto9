@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border:1px solid black;
+    text-align: center;
+    width:80%;
+    margin:0 auto;
+
+
+}
+
+.title-container {
+    
+    padding:1rem;
+    text-align: center;
+}
+
+.title-container a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size:1.5rem;
+}
+
+.title-container a:hover {
+    color:blue;
+}
+
+
+#addUserForm{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#addUserForm input {
+    margin:.5rem 0;
+}
