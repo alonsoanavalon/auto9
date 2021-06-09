@@ -1,0 +1,33 @@
+.admin-btn {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    text-decoration: none;
+    width:200px;
+    height:50px;
+    /*background-color: $primary-color;
+    */border-radius:.5rem;
+    -webkit-border-radius:.5rem;
+    -moz-border-radius:.5rem;
+    -ms-border-radius:.5rem;
+    -o-border-radius:.5rem;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    background-color: $primary-color;
+}
+
+.admin-btn:hover {
+    background-color: royalblue;
+    
+}
+
+.main-index{
+    min-height:100vh;
+}
+    
+ 

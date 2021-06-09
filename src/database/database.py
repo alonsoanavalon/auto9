@@ -25,7 +25,7 @@ class DataBase:
             print("Ha ocurrido un error")
     #Seleccionar TODOS clientes        
     def get_users(self):
-        sql ="SELECT * FROM cliente"
+        sql ="SELECT * FROM cliente ORDER BY id ASC"
 
         try:
 
@@ -127,15 +127,55 @@ class DataBase:
                 self.connection.commit()
         except Exception:
             raise
-    #Productos
+    #Last users
+    def last_users(self):
+        try:
+            sql = "SELECT * FROM cliente ORDER BY id DESC LIMIT 5;"
+            self.cursor.execute(sql)
+            self.connection.commit()
+            lastUsers = self.cursor.fetchall()
+            return lastUsers
+        except Exception:
+            raise
+
+    #Fabricantes
+    def get_fabricators(self):
+        try:
+            sql = "SELECT * FROM fabricante"
+            self.cursor.execute(sql)
+            self.connection.commit()
+            fabricators = self.cursor.fetchall()
+            return fabricators
+        except Exception:
+            raise
+    #Repuesto
+    def add_spare(self, name, fabricator, observation):
+        sql ="INSERT INTO repuesto (nombre, fabricante_id, observacion) VALUES ('{}', '{}', '{}')".format(name, fabricator, observation)
+
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+            
+        except ValueError:
+            print("Ha ocurrido un error")
     def get_products(self):
         try:
-            sql = "SELECT * FROM repuesto"
+            sql = "SELECT repuesto.id AS ID, repuesto.nombre AS Nombre, fabricante.nombre AS Fabricante, repuesto.observacion AS Observacion FROM repuesto INNER JOIN fabricante ON fabricante.id = repuesto.fabricante_id ORDER BY id ASC"
             self.cursor.execute(sql)
             products = self.cursor.fetchall()
             return products
         except Exception:
             raise
+    def last_products(self):
+        try:
+            sql = "SELECT repuesto.id AS ID, repuesto.nombre AS Nombre, fabricante.nombre AS Fabricante, repuesto.observacion AS Observacion FROM repuesto INNER JOIN fabricante ON fabricante.id = repuesto.fabricante_id ORDER BY id DESC LIMIT 5;"
+            self.cursor.execute(sql)
+            self.connection.commit()
+            lastProducts = self.cursor.fetchall()
+            return lastProducts
+        except Exception:
+            raise
+
 
 
 

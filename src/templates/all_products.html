@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+
+{% block content %}
+
+<a class="btn"href="/admin/products">Atrás</a>
+
+{% if products %}
+    <h1>Todos los repuestos</h1>
+{% endif %}
+
+<div class="productsContainer">
+    <table id="productsTable">
+    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Fabricante</td><td>Observacion</td></tr>
+    {% for product in products -%}
+    <tr><td>{{product[0]}}</td><td>{{product[1]}}</td><td>{{product[2]}}</td><td>{{product[3]}}</td></tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

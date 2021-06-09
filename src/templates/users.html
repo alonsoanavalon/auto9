@@ -2,26 +2,43 @@
 
 {%block content%}
 
-<h1>Estos son todos los usuarios</h1>
+<h1 class="users-title">Panel de clientes</h1>
 
-<button id="backToIndex">Ir atrás</s></button>
+<a class="btn" href="/admin">Volver al panel</a>
 
-{% if users %}
-    <h1>Tabla de usuarios</h1>
-{% endif %}
+<section class="users">
+    <div class="users-options">
+        <a href="/admin/users/all">Obtener todos los clientes</a>
+    </div>
 
-<div class="usersContainer">
-    <table id="usersTable">
-{% for user in users -%}
-    <tr class="user" id="user{{user[0]}}">
-        <td>{{user[1]}}</td>
-        <td><a href="?id={{user[0]}}&method=delete">Eliminar</a></td>
+    <section class="add-user">
+        <h2>Agregar cliente</h2>
+        <form action="/admin/users/add" id="addUserForm" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <input type="text" id="surname" name="surname" placeholder="Apellido" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="phone" name="phone" placeholder="Número de teléfono" required>
+            <input id="user-submit" type="submit">
+        </form>
+    </section>
+</section>
 
-    </tr>
-{% endfor %}
+<section class="lastUsers">
+    {% if lastUsers %}
+    <h2 class="lastUsers-title">Últimos clientes registrados</h2>
+    {% endif %}
+    <table>
+        <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Apellido</td><td>Email</td><td>Teléfono</td></tr>
+        {% for user in lastUsers -%}
+        <tr><td>{{user[0]}}</td><td>{{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td></tr>
+        {% endfor%}
     </table>
-<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
-</div>
+</section>
+
+
+
+
+
 
 
 {%endblock%}

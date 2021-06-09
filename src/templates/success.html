@@ -2,7 +2,16 @@
 
 {%block content%}
 
-<h1 class="success">El usuario <span>{{user}}</span> ha sido añadido con éxito!</h1>
+{% if user %}
+    <h1 class="success">El usuario <span>{{user}}</span> ha sido añadido con éxito!</h1>
+    <a class="btn-success"href="/admin/users">Volver a usuarios</a>
+
+{% elif spare %}
+    <h1 class="success">El repuesto <span>{{spare}}</span> ha sido añadido con éxito!</h1>
+    <a class="btn-success"href="/admin/products">Volver a repuestos</a>
+{% endif %}
+
+
 
 
 {%endblock%}

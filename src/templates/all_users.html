@@ -1,0 +1,24 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1>Estos son todos los usuarios</h1>
+
+<a class="btn"href="/admin/users">Atrás</a>
+
+{% if users %}
+    <h1>Tabla de usuarios</h1>
+{% endif %}
+
+<div class="usersContainer">
+    <table id="usersTable">
+    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Apellido</td><td>Email</td><td>Teléfono</td></tr>
+    {% for user in users -%}
+    <tr><td>{{user[0]}}</td><td>{{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td></tr>
+    {% endfor %}
+    </table>
+<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
+</div>
+
+
+{%endblock%}
