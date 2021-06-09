@@ -134,10 +134,6 @@ class DataBase:
             self.cursor.execute(sql)
             products = self.cursor.fetchall()
             return products
-
-            
-
-
         except Exception:
             raise
 

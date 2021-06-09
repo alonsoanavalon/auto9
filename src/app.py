@@ -25,6 +25,7 @@ def get_users():
         if request.args.get('id') == None:
             users = db.get_users()
             return render_template('users.html', users = users)
+        #Si viene algo en el id hace esto
         elif request.args.get('id') != None:
             #Si el metodo es delete, se elimina por id, sino puedo hacer alguna otra cosa
             if request.args.get('method') == "delete":
@@ -52,6 +53,7 @@ def products():
     if request.method == "GET":
         products = db.get_products()
         return render_template('products.html', products = products)
+
 
 
 

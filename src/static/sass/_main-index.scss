@@ -1,0 +1,47 @@
+/* main */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin:0 auto;
+    padding-top:4rem;
+
+    
+
+}
+
+.title-container {
+    
+    padding:1rem;
+    text-align: center;
+}
+
+.title-container a {
+    
+    text-decoration: none;
+    font-size:1.5rem;
+    color:#ddd;
+}
+
+.title-container a:hover,
+.title-container a:active,
+.title-container a:visited{
+    color:#fff;
+    font-weight: bold;
+}
+
+
+
+
+#addUserForm{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#addUserForm input {
+    margin:.5rem 0;
+}

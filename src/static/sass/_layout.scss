@@ -1,0 +1,28 @@
+body {
+    font-family: 'Roboto', sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template:"header"
+                  "main"
+                  "footer";
+}
+
+
+.header {
+    grid-area: header;
+    width:100%;
+}
+
+.main {
+    grid-area:main;
+    width:100%;
+    min-height: 100vh;
+    background-color: #f1f1fe;
+}
+
+.footer {
+    grid-area: footer;
+    width:100%;
+}

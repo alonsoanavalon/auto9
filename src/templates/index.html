@@ -2,22 +2,32 @@
 
 
 {% block content %}
-<div class="title-container">
-    <h1 class="title">Sección de usuarios</h1>
-    <a href="/users">Obtener todos los usuarios</a>
+
+<div class="main-container">
+
+
+    
 </div>
-<section class="add-user">
-    <h2>Agregar Usuario</h2>
-    <form action="users/add" id="addUserForm" method="POST">
-        <input type="text" id="name" name="name" placeholder="Nombre" required>
-        <input type="text" id="surname" name="surname" placeholder="Apellido" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="text" id="phone" name="phone" placeholder="Número de teléfono" required>
-        <input type="submit">
-    </form>
-</section>
-<section class="products">
-    <h1>Sección de productos</h1>
-    <a href="/products">Obtener todos los productos</a>
-</section>
+
+<div class="hidden" style="display:none; visibility: hidden;">
+    <div class="title-container">
+        <h1 class="title">Sección de usuarios</h1>
+        <a href="/users">Obtener todos los usuarios</a>
+    </div>
+    <section class="add-user">
+        <h2>Agregar Usuario</h2>
+        <form action="users/add" id="addUserForm" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <input type="text" id="surname" name="surname" placeholder="Apellido" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="phone" name="phone" placeholder="Número de teléfono" required>
+            <input type="submit">
+        </form>
+    </section>
+    <section class="products">
+        <h1>Sección de productos</h1>
+        <a href="/products">Obtener todos los productos</a>
+    </section>
+</div>
+
 {% endblock %}

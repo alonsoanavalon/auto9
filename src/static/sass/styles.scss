@@ -1,0 +1,55 @@
+@import 'normalize';
+@import 'footer';
+@import 'header';
+@import 'layout';
+@import 'mediaqueries';
+@import 'main-index';
+
+* {
+    margin:0;
+    padding:0;
+}
+
+/* Users */
+
+.user {
+    list-style: none;
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+
+/* Success */
+
+.success {
+    color:#333;
+
+}
+
+.success span {
+    color:green;
+}
+
+/* Tabla users */
+
+#usersTable {
+    border:1px solid black; 
+}
+
+#usersTable tr td {
+    padding:.5rem 1rem;
+    border:1px solid #ccc;
+}
+
+#usersTable a{
+    text-decoration: none;
+    
+}
+#usersTable a:hover{
+    font-weight: bold;
+}
+
+
+/* footer */
+
+
