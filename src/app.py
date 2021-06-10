@@ -41,12 +41,16 @@ def get_users():
                 return render_template('all_users.html', users = users)
             elif request.args.get('id') != None:
                 #Si el metodo es delete, se elimina por id, sino puedo hacer alguna otra cosa
+                id = request.args.get('id')
                 if request.args.get('method') == "delete":
-                    id = request.args.get('id')
                     print(request.args.get('method'))
                     print("pasamos method")
                     db.delete_user(id)
                     return redirect('/admin/users/all')
+                if request.args.get('method') == 'update':
+                    user = db.get_user(id)
+                    return render_template("update_user.html", user = user)
+                    
     
 
 @app.route('/admin/users/add', methods=["GET", "POST"])
@@ -83,7 +87,12 @@ def add_products():
         req = request.form
         db.add_spare(req["name"], req["fabricator"], req["observation"])
         return render_template('success.html', spare = req["name"]) 
-
+@app.route('/admin/users/update', methods = ["GET", "POST"])
+def update_user():
+    if request.method == "POST":
+        req = request.form
+        db.update_user(req["id"], req["name"], req["surname"], req["email"], req["phone"])
+        return render_template("success.html", updatedUser = req["name"] )
 
 
 

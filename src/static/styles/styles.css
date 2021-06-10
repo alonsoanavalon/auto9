@@ -319,7 +319,6 @@ body {
 .main {
   grid-area: main;
   width: 100%;
-  background-color: #f1f1fe;
   max-width: 1200px;
   position: relative;
   padding: 2rem 0; }
@@ -750,6 +749,12 @@ img {
 #productsTable .firstColumn {
   background-color: #4C6EA7;
   color: #fff; }
+
+#update-user {
+  display: flex;
+  flex-direction: column; }
+  #update-user input {
+    padding: .2rem; }
 
 * {
   margin: 0;

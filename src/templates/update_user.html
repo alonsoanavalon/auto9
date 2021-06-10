@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if user %}
+    <h3>Actualizar cliente</h3>
+
+    <form id="update-user" action="/admin/users/update" method="POST">
+        <input type="hidden" name="id" value={{user[0]}}>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" value={{user[1]}}>
+        <label for="surname">Apellido</label>
+        <input type="text" name="surname" value={{user[2]}}>
+        <label for="email">Email</label>
+        <input type="email" name="email" value={{user[3]}}>
+        <label for="phone">Telefono</label>
+        <input type="text" name="phone" value={{user[4]}}>
+        <input type="submit" class="btn">
+
+    </form>
+
+{% endif %}
+
+
+
+
+{% endblock %}

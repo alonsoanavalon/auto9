@@ -1,3 +1,4 @@
+from os import error
 import pymysql
 
 
@@ -23,6 +24,31 @@ class DataBase:
             
         except ValueError:
             print("Ha ocurrido un error")
+    #Seleccionar un cliente
+    def get_user(self, id):
+        try:
+            if id == None:
+                raise Exception("No ha ingresado ningun id")
+            else:
+                sql = "SELECT * FROM cliente WHERE id={}".format(id)
+                self.cursor.execute(sql)
+                self.connection.commit()
+                user = self.cursor.fetchone()
+                return user
+        except Exception:
+            raise
+    #actualizar un cliente
+    def update_user(self, id, nombre, apellido, email, telefono):
+        try:
+            if id == None:
+                raise Exception
+            else:
+                sql = "UPDATE cliente SET nombre = '{}', apellido = '{}', email = '{}', telefono = '{}' WHERE id='{}'".format(nombre, apellido, email, telefono, id)
+                self.cursor.execute(sql)
+                self.connection.commit()
+
+        except Exception:
+            raise
     #Seleccionar TODOS clientes        
     def get_users(self):
         sql ="SELECT * FROM cliente ORDER BY id ASC"

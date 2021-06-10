@@ -9,6 +9,9 @@
 {% elif spare %}
     <h1 class="success">El repuesto <span>{{spare}}</span> ha sido añadido con éxito!</h1>
     <a class="btn-success"href="/admin/products">Volver a repuestos</a>
+{% elif updatedUser %}
+    <h1 class="success">El usuario <span>{{updatedUser}}</span> ha sido actualizado con éxito!</h1>
+    <a class="btn-success"href="/admin/users/all">Volver a todos los usuarios</a>
 {% endif %}
 
 

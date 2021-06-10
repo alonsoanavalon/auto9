@@ -12,9 +12,9 @@
 
 <div class="usersContainer">
     <table id="usersTable">
-    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Apellido</td><td>Email</td><td>Teléfono</td></tr>
+    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Apellido</td><td>Email</td><td>Teléfono</td><td>Eliminar</td><td>Modificar</td></tr>
     {% for user in users -%}
-    <tr><td>{{user[0]}}</td><td>{{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td></tr>
+    <tr><td>{{user[0]}}</td><td>{{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td><td><a href="?method=delete&id={{user[0]}}">x</a></td><td><a href="?method=update&id={{user[0]}}">o</a></td></tr>
     {% endfor %}
     </table>
 <script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
