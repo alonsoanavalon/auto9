@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if product %}
+    <h3>Actualizar cliente</h3>
+
+    <form id="update-product" action="/admin/products/update" method="POST">
+        <input type="hidden" name="id" value={{product[0]}}>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" value={{product[1]}}>
+        {% if fabricators %}
+        <label for="fabricator">Fabricante</label>
+        <select name="fabricator" id="fabricator">
+            {% for fabricator in fabricators -%}
+            <option value="{{fabricator[0]}}">{{fabricator[1]}}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        <label for="observation">Observacion</label>
+        <input type="text" name="observation" value={{product[3]}}>
+        <input type="submit" class="btn">
+
+
+
+    </form>
+
+{% endif %}
+
+
+
+
+{% endblock %}

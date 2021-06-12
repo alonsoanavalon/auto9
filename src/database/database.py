@@ -201,6 +201,41 @@ class DataBase:
             return lastProducts
         except Exception:
             raise
+    #obtener un producto
+    def get_product(self, id):
+        try:
+            if id == None:
+                raise Exception("No ha ingresado ningún id")
+            else:
+                sql = "SELECT * FROM repuesto WHERE id={}".format(id)
+                self.cursor.execute(sql)
+                self.connection.commit()
+                product = self.cursor.fetchone()
+                return product
+        except Exception:
+            raise
+    #actualizar un producto
+    def update_product(self, id, nombre, fabricante_id, observacion):
+        try:
+            if id == None:
+                raise Exception("No se ha ingresado ningún id")
+            else:
+                sql = "UPDATE repuesto SET nombre = '{}', fabricante_id = '{}', observacion = '{}' WHERE id= {}".format(nombre, fabricante_id, observacion, id)
+                self.cursor.execute(sql)
+                self.connection.commit()
+        except Exception:
+            raise
+    #Eliminar producto
+    def delete_product(self, id):
+        try:
+            if id == None:
+                raise Exception("No se ha ingresado ningún id")
+            else:
+                sql = "DELETE FROM repuesto WHERE id = {}".format(id)
+                self.cursor.execute(sql)
+                self.connection.commit()
+        except Exception:
+            raise
 
 
 

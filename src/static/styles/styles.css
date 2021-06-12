@@ -750,12 +750,16 @@ img {
   background-color: #4C6EA7;
   color: #fff; }
 
-#update-user {
+/* Usuario */
+#update-user,
+#update-product {
   display: flex;
   flex-direction: column; }
-  #update-user input {
+  #update-user input,
+  #update-product input {
     padding: .2rem; }
 
+/* Productos */
 * {
   margin: 0;
   padding: 0;
