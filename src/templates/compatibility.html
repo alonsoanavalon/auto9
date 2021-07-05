@@ -1,0 +1,59 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1 class="users-title">Panel de compatibilidad</h1>
+
+<a class="btn" href="/admin">Volver al panel</a>
+
+<section class="users">
+    <div class="users-options">
+        <a href="/admin/compatibility/all">Obtener todos los modelos</a>
+    </div>
+
+
+    <section class="add-user">
+        <h2>Agregar compatibilidad</h2>
+        <form action="/admin/compatibility/add" id="addUserForm" method="POST">
+            {% if products %}
+            <label for="product">Repuesto</label>
+            <select name="product" id="product">
+                {% for product in products -%}
+                <option value="{{product[0]}}">{{product[1]}}</option>
+                {% endfor %}
+            </select>
+            {% endif %}
+            {% if models %}
+            <label for="model">Repuesto</label>
+            <select name="model" id="model">
+                {% for model in models -%}
+                <option value="{{model[0]}}">{{model[2]}} {{model[3]}}</option>
+                {% endfor %}
+            </select>
+            {% endif %}
+            <label for="observaciones">Observaciones</label>
+            <textarea name="observaciones"></textarea>
+            <input id="user-submit" type="submit">
+        </form>
+    </section>
+</section>
+
+<section class="lastCompatibility">
+    {% if lastCompatibility %}
+    <h2 class="lastUsers-title">Últimas compatibilidades registradas</h2>
+    {% endif %}
+    <table>
+        <tr class="firstColumn"><td>ID</td><td>Repuesto</td><td>Modelo</td><td>Año</td><td>Observaciones</td></tr>
+        {% for compatibility in lastCompatibility -%}
+        <tr><td>{{compatibility[0]}}</td><td>{{compatibility[1]}}</td><td>{{compatibility[2]}}</td><td>{{compatibility[3]}}</td><td>{{compatibility[4]}}</td></tr>
+        {% endfor%}
+    </table>
+</section>
+
+
+
+
+
+
+
+{%endblock%}

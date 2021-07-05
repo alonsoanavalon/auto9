@@ -10,9 +10,9 @@
 
 <div class="productsContainer">
     <table id="productsTable">
-    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Fabricante</td><td>Observacion</td></tr>
+    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>Fabricante</td><td>Observacion</td><td>Eliminar</td><td>Modificar</td></tr>
     {% for product in products -%}
-    <tr><td>{{product[0]}}</td><td>{{product[1]}}</td><td>{{product[2]}}</td><td>{{product[3]}}</td></tr>
+    <tr><td>{{product[0]}}</td><td>{{product[1]}}</td><td>{{product[2]}}</td><td>{{product[3]}}</td><td><a href="?id={{product[0]}}&method=delete">x</a></td><td><a href="?id={{product[0]}}&method=update">o</a></td></tr>
     {% endfor %}
     </table>
 </div>

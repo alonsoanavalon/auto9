@@ -309,6 +309,8 @@ body {
   font-family: 'Roboto', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
+  max-width: 2560px;
+  margin: 0 auto;
   grid-template-rows: repeat(3, auto);
   grid-template: "header" "main" "footer"; }
 
@@ -327,6 +329,129 @@ body {
   grid-area: footer;
   width: 100%; }
 
+/* MediaQueries INDEX */
+@media (min-width: 576px) {
+  /* Header */
+  body .header .main-image .image-content img {
+    width: 150px; }
+  body .header .main-image .image-content h1 {
+    font-size: 1.5rem; }
+
+  /* Main */
+  body .main .services .services-images {
+    justify-content: center;
+    gap: 4rem; }
+    body .main .services .services-images .services-image {
+      width: 200px;
+      height: 200px; }
+  body .main .suppliers .logos #logo-kia {
+    width: 120px; }
+  body .main .suppliers .logos #logo-liqui {
+    width: 110px; }
+  body .main .suppliers .logos #logo-philips {
+    width: 120px; }
+  body .main .suppliers .logos #logo-hyundai {
+    width: 160px; }
+  body .main .suppliers .logos #logo-renault {
+    width: 100px; }
+  body .main .suppliers .logos #logo-castrol {
+    width: 140px; }
+  body .main .suppliers .logos .logo-image {
+    width: 150px; }
+
+  /* Footer */
+  body .footer .footer-container img {
+    width: 150px; } }
+@media (min-width: 768px) {
+  /* Header */
+  body h2 {
+    font-size: 1.5rem;
+    line-height: 1rem; }
+  body h3 {
+    font-size: 1.3rem; }
+  body p {
+    font-size: 1.1rem; }
+  body .header .nav .nav-menu {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    width: fit-content;
+    position: relative;
+    opacity: 1;
+    z-index: 0;
+    background-color: transparent;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0); }
+    body .header .nav .nav-menu .nav-menu__item {
+      margin: 2rem 0;
+      padding: 0;
+      font-size: 1.2rem;
+      color: #fff; }
+  body .header .main-image .image-content h1 {
+    font-size: 1.7rem; }
+
+  /* Main */
+  body .main .services .services-text .services-title {
+    font-size: 1.5rem; }
+  body .main .services .services-text h3 {
+    font-size: 1.3rem; }
+  body .main .services .services-images {
+    padding: 2rem 0; }
+    body .main .services .services-images .services-image {
+      width: 250px;
+      height: 250px; }
+      body .main .services .services-images .services-image h4 {
+        font-size: 1.25rem; }
+  body .main .container-slider .slider-text .slider-title {
+    font-size: 1.5rem; }
+  body .main .suppliers .suppliers-text h2 {
+    font-size: 1.5rem;
+    line-height: 1rem; }
+  body .main .suppliers .suppliers-text p {
+    font-size: 1.1rem; }
+  body .main .us .us-text h2 {
+    font-size: 1.5rem;
+    line-height: 1rem; }
+  body .main .us .us-text p {
+    font-size: 1.1rem; }
+
+  /* Footer */ }
+@media (min-width: 992px) {
+  /* Header */
+  body .header .main-image {
+    height: 450px; }
+
+  /* Main */
+  /* Footer */ }
+@media (min-width: 1200px) {
+  /* Header */
+  body {
+    max-width: 2560px;
+    margin: 0 auto; }
+    body .header .main-image {
+      height: 600px; }
+
+  /* Main */
+  body .main .services .services-images {
+    justify-content: center;
+    gap: 7rem; }
+    body .main .services .services-images .services-image {
+      width: 30%;
+      height: 400px;
+      max-width: 400px; }
+      body .main .services .services-images .services-image h4 {
+        font-size: 1.5rem; }
+  body .main .suppliers .logos {
+    gap: 4.5rem; }
+    body .main .suppliers .logos .first-row,
+    body .main .suppliers .logos .second-row {
+      gap: 4.5rem; }
+
+  /* Footer */ }
 /* Header */
 .header {
   background-color: #fff;
@@ -366,7 +491,6 @@ img {
       line-height: 0;
       width: 200px; }
 
-/* MENU */
 /* main */
 .main {
   display: flex;
@@ -376,6 +500,25 @@ img {
   text-align: center;
   margin: 0 auto;
   padding-top: 1rem; }
+
+.compatibility {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 2rem; }
+  .compatibility a {
+    width: 50%;
+    text-decoration: none; }
 
 .title-container {
   padding: 1rem;
@@ -538,7 +681,8 @@ img {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 3rem; }
+  padding: 3rem;
+  border: 2px solid #f1f0f0; }
   .users .users-options {
     display: flex;
     align-items: center;
@@ -668,11 +812,14 @@ img {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 3rem; }
+  border: 2px solid #f1f0f0;
+  padding: 2rem; }
   .products .products-options {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    color: #fff;
+    text-decoration: none; }
     .products .products-options a:nth-child(1) {
       text-decoration: none;
       font-size: 1.2rem;
@@ -750,11 +897,118 @@ img {
   background-color: #4C6EA7;
   color: #fff; }
 
-#update-user {
+/* Usuario */
+#update-user,
+#update-product {
   display: flex;
   flex-direction: column; }
-  #update-user input {
+  #update-user input,
+  #update-product input {
     padding: .2rem; }
+
+/* Productos */
+#update-fabricator {
+  display: flex;
+  flex-direction: column; }
+
+.quotationForm {
+  display: flex;
+  flex-direction: column; }
+
+/* 
+<section class="quotations-cards">
+    {% if lastQuotations %}
+        {% for quotation in lastQuotations -%}
+            <div class="card">
+                <h3>Cotizacion # {{quotation[0]}}</h3>
+                <p class="card-attribute">Cliente</p>
+                <p class="card-value">{{quotation[1]}}</p>
+                <p class="card-attribute">Fabricante</p>
+                <p class="card-value">{{quotation[2]}}</p>
+                <p class="card-attribute">Modelo</p>
+                <p class="card-value">{{quotation[3]}}</p>
+                <p class="card-attribute">Mensaje</p>
+                <p class="card-value">{{quotation[4]}}</p>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+*/
+* {
+  box-sizing: border-box; }
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #4C6EA7;
+  margin-bottom: .5rem; }
+
+h2 {
+  padding: 2rem 0; }
+
+.quotations-cards {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 1rem; }
+  .quotations-cards h3 {
+    padding: 1rem 0; }
+    .quotations-cards h3 span {
+      color: #4C6EA7; }
+  .quotations-cards .card {
+    width: 47%;
+    max-width: 600px;
+    min-height: 300px;
+    padding-top: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem; }
+    .quotations-cards .card .card-header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      padding: 0 1.5rem; }
+      .quotations-cards .card .card-header a {
+        text-decoration: none; }
+    .quotations-cards .card .card-value, .quotations-cards .card .card-attribute {
+      text-align: left; }
+    .quotations-cards .card .card-attribute {
+      font-weight: 600;
+      padding-top: .5rem; }
+    .quotations-cards .card .card-message {
+      max-height: 200px;
+      overflow: auto;
+      padding: .5rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      max-height: 200px;
+      margin-top: .8rem;
+      border-radius: .2rem;
+      -webkit-border-radius: .2rem;
+      -moz-border-radius: .2rem;
+      -ms-border-radius: .2rem;
+      -o-border-radius: .2rem;
+      display: flex;
+      flex-direction: column; }
+  .quotations-cards .one-card {
+    width: 50%;
+    min-width: 300px; }
+
+#get-quotations a {
+  color: #fff;
+  text-decoration: none; }
 
 * {
   margin: 0;

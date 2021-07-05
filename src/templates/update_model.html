@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if model %}
+    <h3>Actualizar modelo</h3>
+
+    <form id="update-product" action="/admin/models/update" method="POST">
+        <input type="hidden" name="id" value={{model[0]}}>
+
+        <!-- "SELECT modelo.id as id, fabricante.nombre as Fabricante, modelo.nombre as Modelo, modelo.fabricacion as Fecha FROM modelo INNER JOIN fabricante ON fabricante.id = modelo.fabricante_id" -->
+        <label for="model">Modelo</label>
+        <input type="text" name="model" value={{model[2]}}>
+        <label for="year">Año</label>
+        <input type="text" name="year" value={{model[3]}}>
+        {% if fabricators %}
+        <label for="fabricator">Fabricante</label>
+        <select name="fabricator" id="fabricator">
+            {% for fabricator in fabricators -%}
+            <option value="{{fabricator[0]}}">{{fabricator[1]}}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        <input type="submit" class="btn">
+
+
+
+    </form>
+
+{% endif %}
+
+
+
+
+{% endblock %}

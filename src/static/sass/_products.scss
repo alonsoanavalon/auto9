@@ -7,12 +7,16 @@
     display: flex;
     width:100%;
     justify-content: space-around;
-    padding:3rem;
+    border: 2px solid #f1f0f0;
+    padding:2rem;
 
+    
     .products-options {
         display: flex;
         align-items: center;
         justify-content: center;
+        color:#fff;
+        text-decoration: none;
         
         a:nth-child(1){
             text-decoration: none;

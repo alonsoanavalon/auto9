@@ -1,0 +1,26 @@
+{%extends "layout.html"%}
+
+{% block content %}
+
+<a class="btn"href="/admin/products">Atrás</a>
+
+{% if compatibilities %}
+    <h1>Todas las compatibilidades</h1>
+
+    <form action="/admin/compatibility/search" method="POST">
+        <input type="text" name="keywords" placeholder="Ingrese su búsqueda...">
+        <input type="submit">
+    </form>
+{% endif %}
+
+<div class="productsContainer">
+    <table id="productsTable">
+    <tr class="firstColumn"><td>ID</td><td>Repuesto</td><td>Modelo</td><td>Año</td><td>Observaciones</td><td>Eliminar</td><td>Modificar</td></tr>
+    {% for compatibility in compatibilities -%}
+    <tr><td>{{compatibility[0]}}</td><td>{{compatibility[1]}}</td><td>{{compatibility[2]}}</td><td>{{compatibility[3]}}</td><td>{{compatibility[4]}}</td><td><a href="?id={{compatibility[0]}}&method=delete">x</a></td><td><a href="?id={{compatibility[0]}}&method=update">o</a></td></tr>
+    {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

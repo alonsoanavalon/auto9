@@ -1,0 +1,49 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1 class="users-title">Panel de cotizaciones</h1>
+
+<a class="btn" href="/admin">Volver al panel</a>
+
+
+
+    <div class="products-options btn" id="get-quotations">
+        <a href="/admin/quotations/all">Obtener todas las cotizaciones</a>
+    </div>
+
+<h2>Últimas cotizaciones</h2>
+<section class="quotations-cards">
+    {% if lastQuotations %}
+       
+        {% for quotation in lastQuotations -%}
+            <div class="card">
+                <div class="card-header">
+                    <h3>Cotizacion <span>#</span> {{quotation[0]}}</h3>
+                    <a href="/admin/quotations/all?method=delete&id={{quotation[0]}}&page=cards">X</a>
+                </div>
+                <div class="line"></div>
+                <p class="card-attribute">Cliente</p>
+                <p class="card-value">{{quotation[1]}}</p>
+                <p class="card-attribute">Correo</p>
+                <p class="card-value">{{quotation[5]}}</p>
+                <p class="card-attribute">Fabricante</p>
+                <p class="card-value">{{quotation[2]}}</p>
+                <p class="card-attribute">Modelo</p>
+                <p class="card-value">{{quotation[3]}}</p>
+                <p class="card-attribute">Mensaje</p>
+                <p class="card-value card-message" >{{quotation[4]}}</p>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+
+
+
+
+
+
+
+{%endblock%}

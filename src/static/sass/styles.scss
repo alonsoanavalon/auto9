@@ -3,12 +3,15 @@
 @import 'layout';
 @import 'mediaqueries';
 @import 'header';
-@import 'main-index';
+@import 'admin';
 @import 'footer';
 @import 'users';
 @import 'index';
 @import 'products';
 @import 'update';
+@import 'fabricators';
+@import 'quotations';
+    
 
 // Estilos generales
 * {
@@ -32,6 +35,8 @@
     font-weight: bold;
     margin:1rem 0;
 }
+
+
 
 /* Users */
 

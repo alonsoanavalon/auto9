@@ -1,0 +1,24 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1>Estas son todas las cotizaciones</h1>
+
+<a class="btn"href="/admin">Atrás</a>
+
+{% if quotations %}
+    <h1>Tabla de cotizaciones</h1>
+{% endif %}
+
+<div class="fabricatorsContainer">
+    <table id="fabricatorsTable">
+    <tr class="firstColumn"><td>ID</td><td>id_cliente</td><td>Cliente</td><td>Fabricante</td><td>Modelo</td><td>Ver</td><td>Eliminar</td></tr>
+    {% for quotation in quotations -%}
+    <tr><td>{{quotation[0]}}</td><td>{{quotation[1]}}</td><td>{{quotation[2]}}</td><td>{{quotation[3]}}</td><td>{{quotation[4]}}</td><td><a href="?method=view&id={{quotation[0]}}">o.o</a></td><td><a href="?method=delete&id={{quotation[0]}}">x</a></td></tr>
+    {% endfor %}
+    </table>
+<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,35 @@
+{%extends "layout.html"%}
+
+{% block content %}
+
+<a class="btn"href="/admin/quotations">Atrás</a>
+
+{% if quote %}
+    <h1>Cotización #{{quote[0]}}</h1>
+{% endif %}
+
+<section class="quotations-cards">
+    <div class="card one-card">
+        <div class="card-header">
+            <h3>Cotizacion <span>#</span> {{quote[0]}}</h3>
+            <a href="/admin/quotations/all?method=delete&id={{quote[0]}}">X</a>
+        </div>
+        <div class="line"></div>
+        <p class="card-attribute">Cliente</p>
+        <p class="card-value">{{quote[1]}}</p>
+        <p class="card-attribute">Correo</p>
+        <p class="card-value">{{quote[5]}}</p>
+        <p class="card-attribute">Fabricante</p>
+        <p class="card-value">{{quote[2]}}</p>
+        <p class="card-attribute">Modelo</p>
+        <p class="card-value">{{quote[3]}}</p>
+        <p class="card-attribute">Mensaje</p>
+        <p class="card-value card-message" >{{quote[4]}}</p>
+
+</div>
+</section>
+
+
+
+
+{% endblock %}

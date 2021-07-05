@@ -9,8 +9,28 @@
     margin:0 auto;
     padding-top:1rem;
 
-    
+}
 
+.compatibility {
+    padding:1rem;
+    border:1px solid #ccc;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    height:100px;
+    display: flex;
+    width:100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-bottom:2rem;
+
+    a {
+        width:50%;
+        text-decoration: none;
+    }
 }
 
 .title-container {

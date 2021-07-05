@@ -2,9 +2,43 @@
 
 
 {% block content %}
+
+
 <section class="main-index">
     <a class="admin-btn" href="/admin">Panel de administrador</a>
 </section>
+
+<form class="quotationForm" action="/quotation/add" method="POST">
+    <label for="name">Nombre</label>
+    <input type="text" name="name">
+    <label for="surname">Apellido</label>
+    <input type="text" name="surname">
+    <label for="email">Email</label>
+    <input type="email" name="email">
+    <label for="phone">Teléfono</label>
+    <input type="text" name="phone">
+    {% if fabricators %}
+    <label for="fabricante">Fabricante</label>
+    <select name="fabricante">
+        {% for fabricator in fabricators -%}
+        <option value="{{fabricator[1]}}">{{fabricator[1]}}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
+
+    {% if models %}
+    <label for="model">Modelo</label>
+    <select name="model">
+        {% for model in models -%}
+        <option value="{{model[2]}}">{{model[2]}}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
+
+    <label for="message">Requerimientos</label>
+    <textarea name="message"></textarea>
+    <input type="submit">
+</form>
 
 
 

@@ -3,6 +3,8 @@ body {
 
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 2560px;
+    margin:0 auto;
     grid-template-rows: repeat(3, auto);
     grid-template:"header"
                   "main"

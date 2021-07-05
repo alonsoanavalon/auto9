@@ -1,0 +1,24 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1>Estos son todos los usuarios</h1>
+
+<a class="btn"href="/admin/fabricators">Atrás</a>
+
+{% if fabricators %}
+    <h1>Tabla de fabricantes</h1>
+{% endif %}
+
+<div class="fabricatorsContainer">
+    <table id="fabricatorsTable">
+    <tr class="firstColumn"><td>ID</td><td>Nombre</td><td>País</td><td>Eliminar</td><td>Modificar</td></tr>
+    {% for fabricator in fabricators -%}
+    <tr><td>{{fabricator[0]}}</td><td>{{fabricator[1]}}</td><td>{{fabricator[2]}}</td><td><a href="?method=delete&id={{fabricator[0]}}">x</a></td><td><a href="?method=update&id={{fabricator[0]}}">o</a></td></tr>
+    {% endfor %}
+    </table>
+<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
+</div>
+
+
+{%endblock%}

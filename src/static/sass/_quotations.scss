@@ -1,0 +1,136 @@
+.quotationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+<section class="quotations-cards">
+    {% if lastQuotations %}
+        {% for quotation in lastQuotations -%}
+            <div class="card">
+                <h3>Cotizacion # {{quotation[0]}}</h3>
+                <p class="card-attribute">Cliente</p>
+                <p class="card-value">{{quotation[1]}}</p>
+                <p class="card-attribute">Fabricante</p>
+                <p class="card-value">{{quotation[2]}}</p>
+                <p class="card-attribute">Modelo</p>
+                <p class="card-value">{{quotation[3]}}</p>
+                <p class="card-attribute">Mensaje</p>
+                <p class="card-value">{{quotation[4]}}</p>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.line {
+    height:1px;
+    width:100%;
+    background-color: $primary-color;
+    margin-bottom:.5rem;
+}
+h2 {
+    padding:2rem 0;
+}
+
+.quotations-cards {
+    display: flex;
+    padding:0 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    width:100%;
+    flex-wrap: wrap;
+    margin:2rem 0;
+    gap:1rem;
+
+ 
+
+    h3 {
+        padding:1rem 0;
+
+        span {
+            color:$primary-color;
+        }
+    }
+
+
+
+    
+    .card {
+        width:47%;
+        max-width:600px;
+        min-height:300px;
+        padding-top:1rem;
+        border:1px solid #ccc;
+        padding:1rem;
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+        -ms-border-radius: .5rem;
+        -o-border-radius: .5rem;
+
+        .card-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            padding:0 1.5rem;
+
+            a {
+                text-decoration: none;
+            }
+
+
+        }
+
+        .card-value,.card-attribute{
+            text-align: left;
+        }
+
+        .card-attribute {
+        
+            font-weight: 600;
+            padding-top:.5rem;
+        }
+
+        .card-message {
+            max-height:200px;
+            overflow:auto;
+            padding:.5rem;
+            width:100%;
+            border:1px solid #ccc;
+            max-height:200px;
+            margin-top:.8rem;
+            border-radius: .2rem;
+            -webkit-border-radius: .2rem;
+            -moz-border-radius: .2rem;
+            -ms-border-radius: .2rem;
+            -o-border-radius: .2rem;
+
+            display: flex;
+            flex-direction: column;
+        }
+    
+    }
+
+    .one-card {
+        width:50%;
+        min-width: 300px;
+    }
+
+}
+
+
+#get-quotations {
+    a {
+        color:#fff;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,50 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1 class="users-title">Panel de Modelos</h1>
+
+<a class="btn" href="/admin">Volver al panel</a>
+
+<section class="users">
+    <div class="users-options">
+        <a href="/admin/models/all">Obtener todos los modelos</a>
+    </div>
+
+    <section class="add-user">
+        <h2>Agregar modelo</h2>
+        <form action="/admin/models" id="addUserForm" method="POST">
+            <input type="text" id="name" name="name" placeholder="Modelo" required>
+            <input type="text" id="year" name="year" placeholder="Año" required>
+            {% if fabricators %}
+            <label for="fabricator">Fabricante</label>
+            <select name="fabricator" id="fabricator">
+                {% for fabricator in fabricators -%}
+                <option value="{{fabricator[0]}}">{{fabricator[1]}}</option>
+                {% endfor %}
+            </select>
+            {% endif %}
+            <input id="user-submit" type="submit">
+        </form>
+    </section>
+</section>
+
+<section class="lastUsers">
+    {% if lastModels %}
+    <h2 class="lastUsers-title">Últimos modelos registrados</h2>
+    {% endif %}
+    <table>
+        <tr class="firstColumn"><td>ID</td><td>Modelo</td><td>Año</td><td>Fabricante</td></tr>
+        {% for model in lastModels -%}
+        <tr><td>{{model[0]}}</td><td>{{model[2]}}</td><td>{{model[3]}}</td><td>{{model[1]}}</td></tr>
+        {% endfor%}
+    </table>
+</section>
+
+
+
+
+
+
+
+{%endblock%}

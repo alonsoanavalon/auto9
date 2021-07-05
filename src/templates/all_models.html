@@ -1,0 +1,24 @@
+{%extends "layout.html" %}
+
+{%block content%}
+
+<h1>Estos son todos los usuarios</h1>
+
+<a class="btn"href="/admin/models">Atrás</a>
+
+{% if models %}
+    <h1>Tabla de modelos</h1>
+{% endif %}
+
+<div class="fabricatorsContainer">
+    <table id="fabricatorsTable">
+    <tr class="firstColumn"><td>ID</td><td>Modelo</td><td>Año</td><td>Fabricante</td><td>Eliminar</td><td>Modificar</td></tr>
+    {% for model in models -%}
+    <tr><td>{{model[0]}}</td><td>{{model[2]}}</td><td>{{model[3]}}</td><td>{{model[1]}}</td><td><a href="?method=delete&id={{model[0]}}">x</a></td><td><a href="?method=update&id={{model[0]}}">o</a></td></tr>
+    {% endfor%}
+    </table>
+<script src="{{ url_for('static',filename='js/btnToIndex.js') }}"></script>
+</div>
+
+
+{%endblock%}

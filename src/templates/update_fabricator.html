@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+{% if fabricator %}
+    <h3>Actualizar fabricante</h3>
+
+    <form id="update-fabricator" action="/admin/fabricators/update" method="POST">
+        <input type="hidden" name="id" value={{fabricator[0]}}>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" value={{fabricator[1]}}>
+        <label for="country">País</label>
+        <input type="text" name="country" value={{fabricator[2]}}>
+        <input type="submit" class="btn">
+
+
+
+    </form>
+
+{% endif %}
+
+
+
+
+{% endblock %}
