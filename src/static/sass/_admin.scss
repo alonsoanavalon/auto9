@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/static/sass/_admin.scss
 /* main */
 
 .main {
@@ -220,3 +221,207 @@
 
 
 
+=======
+/* main */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin:0 auto;
+    padding-top:1rem;
+
+    
+
+}
+
+.title-container {
+    
+    padding:1rem;
+    text-align: center;
+}
+
+.title-container a {
+    
+    text-decoration: none;
+    font-size:1.5rem;
+    color:#ddd;
+}
+
+.title-container a:hover,
+.title-container a:active,
+.title-container a:visited{
+    color:#fff;
+    font-weight: bold;
+}
+
+
+
+
+#addUserForm{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#addUserForm input {
+    margin:.5rem 0;
+}
+
+/* Container imagenes links */
+
+.main-container {
+
+    .index-title{
+        padding:2rem 0;
+        padding-bottom:4rem;
+        color:#444;
+        line-height: 3rem;
+        .subtitle-index {
+            font-weight: 500;
+        }
+    }
+
+    .links-container {
+
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template:"clientes cotizaciones"
+                      "fabricantes repuestos";
+        gap:1rem;
+
+        .link:nth-child(1) {
+            grid-area: clientes;
+            background-image: url('../images/clientes.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius:1rem 0 0 0;
+            -webkit-border-radius:1rem 0 0 0;
+            -moz-border-radius:1rem 0 0 0;
+            -ms-border-radius:1rem 0 0 0;
+            -o-border-radius:1rem 0 0 0;
+        }
+        .link:nth-child(2){
+            grid-area:cotizaciones;
+            background-image: url('../images/cotizaciones.jpeg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 0 1rem 0 0;
+            -webkit-border-radius: 0 1rem 0 0;
+            -moz-border-radius: 0 1rem 0 0;
+            -ms-border-radius: 0 1rem 0 0;
+            -o-border-radius: 0 1rem 0 0;
+        }
+        .link:nth-child(3){
+            grid-area:fabricantes;
+            background-image: url('../images/fabricantes.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 0 0 0 1rem ;
+            -webkit-border-radius: 0 0 0 1rem ;
+            -moz-border-radius: 0 0 0 1rem ;
+            -ms-border-radius: 0 0 0 1rem ;
+            -o-border-radius: 0 0 0 1rem ;
+        }
+        .link:nth-child(4){
+            grid-area:repuestos;
+            background-image: url('../images/repuestos.jpeg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 0 0 1rem 0;
+            -webkit-border-radius: 0 0 1rem 0;
+            -moz-border-radius: 0 0 1rem 0;
+            -ms-border-radius: 0 0 1rem 0;
+            -o-border-radius: 0 0 1rem 0;
+        }
+
+        /* HOVERS IMAGENES   */
+        
+        .link:nth-child(1):not(:hover),
+        .link:nth-child(2):not(:hover),
+        .link:nth-child(3):not(:hover),
+        .link:nth-child(4):not(:hover) {
+            transition: transform .8s ease;
+            -webkit-transition: transform .8s ease;
+            -moz-transition: transform .8s ease;
+            -ms-transition: transform .8s ease;
+            -o-transition: transform .8s ease;
+}
+
+        .link:nth-child(1):hover {
+            transform: translateX(-10px);
+            -webkit-transform: translateX(-10px);
+            -moz-transform: translateX(-10px);
+            -ms-transform: translateX(-10px);
+            -o-transform: translateX(-10px);
+            transition:transform .5s ease;
+        }
+        .link:nth-child(2):hover {
+            transform: translateX(10px);
+            -webkit-transform: translateX(10px);
+            -moz-transform: translateX(10px);
+            -ms-transform: translateX(10px);
+            -o-transform: translateX(10px);
+            transition:transform .5s ease;
+        }
+        .link:nth-child(3):hover {
+            transform: translateX(-10px);
+            -webkit-transform: translateX(-10px);
+            -moz-transform: translateX(-10px);
+            -ms-transform: translateX(-10px);
+            -o-transform: translateX(-10px);
+            transition:transform .5s ease;
+        }
+        .link:nth-child(4):hover {
+            transform: translateX(10px);
+            -webkit-transform: translateX(10px);
+            -moz-transform: translateX(10px);
+            -ms-transform: translateX(10px);
+            -o-transform: translateX(10px);
+            transition:transform .5s ease;
+            -webkit-transition:transform .5s ease;
+            -moz-transition:transform .5s ease;
+            -ms-transition:transform .5s ease;
+            -o-transition:transform .5s ease;
+        }
+    }
+
+    .link {
+        width:300px;
+        height:300px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-decoration: none;
+        color:#fff;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        span {
+            padding:1rem;
+            background-color: rgba(1,1, 1, .1);
+            border-radius:.5rem ;
+            -webkit-border-radius:.5rem ;
+            -moz-border-radius:.5rem ;
+            -ms-border-radius:.5rem ;
+            -o-border-radius:.5rem ;
+}
+
+    }
+
+    .link:active,
+    .link:visited{
+        color:#fff;
+    }
+
+   
+
+}
+
+
+
+>>>>>>> 0bda20bd28948ad8f035e735437996e297167a76:src/static/sass/_main-index.scss

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import 'normalize';
 @import 'variables';
 @import 'layout';
@@ -64,3 +65,66 @@
 /* footer */
 
 
+=======
+@import 'normalize';
+@import 'variables';
+@import 'layout';
+@import 'mediaqueries';
+@import 'header';
+@import 'main-index';
+@import 'footer';
+@import 'users';
+@import 'index';
+@import 'products';
+@import 'update';
+
+// Estilos generales
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.btn {
+    padding:.8rem 1.5rem;
+    color:#fff;
+    background-color: $primary-color;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin:1rem 0;
+}
+
+/* Users */
+
+.user {
+    list-style: none;
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+
+/* Success */
+
+.success {
+    color:#333;
+
+}
+
+.success span {
+    color:green;
+}
+
+
+
+
+/* footer */
+
+
+>>>>>>> 0bda20bd28948ad8f035e735437996e297167a76

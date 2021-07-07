@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Usuario */
 #update-user,
 #update-product {
@@ -11,3 +12,18 @@
 
 
 /* Productos */
+=======
+/* Usuario */
+#update-user,
+#update-product {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        padding:.2rem;
+    }
+}
+
+
+/* Productos */
+>>>>>>> 0bda20bd28948ad8f035e735437996e297167a76
