@@ -2,19 +2,13 @@
 
 {% block content %}
 
-<a class="btn"href="/admin/products">Atrás</a>
-
-{% if items %}
-    {% for element in items -%}
-        <div class="">{{element}}</div>
-    {% endfor %}
-{% endif %}
+<a class="btn"href="/admin/compatibility/all">Atrás</a>
 
 <div class="productsContainer">
     <table id="productsTable">
-    <tr class="firstColumn"><td>ID</td><td>Repuesto</td><td>Modelo</td><td>Año</td><td>Observaciones</td><td>Eliminar</td><td>Modificar</td></tr>
-    {% for compatibility in compatibilities -%}
-    <tr><td>{{compatibility[0]}}</td><td>{{compatibility[1]}}</td><td>{{compatibility[2]}}</td><td>{{compatibility[3]}}</td><td>{{compatibility[4]}}</td><td><a href="?id={{compatibility[0]}}&method=delete">x</a></td><td><a href="?id={{compatibility[0]}}&method=update">o</a></td></tr>
+    <tr class="firstColumn"><td>ID</td><td>FabricanteRepuesto</td><td>Repuesto</td><td>Modelo</td><td>Año</td><td>Eliminar</td><td>Modificar</td></tr>
+    {% for item in items -%}
+    <tr><td>{{item[0]}}</td><td>{{item[1]}}</td><td>{{item[2]}}</td><td>{{item[3]}}</td><td>{{item[4]}}</td><td><a href="?id={{item[0]}}&method=delete">x</a></td><td><a href="?id={{item[0]}}&method=update">o</a></td></tr>
     {% endfor %}
     </table>
 </div>
